@@ -163,3 +163,22 @@ span {
     background-position: 200%;
   }
 }
+@media (max-width: 767px) {
+  .projects-ul {
+    grid-template-columns: auto;
+  }
+
+  .info {
+    font-size: small;
+    padding: 25px 10px;
+    margin: 15px;
+  }
+  .info > div {
+    flex-direction: column;
+  }
+  p,
+  h1 {
+    text-align: center;
+  }
+}
+
