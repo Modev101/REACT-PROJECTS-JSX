@@ -1,0 +1,165 @@
+body {
+  background-color: #cfcece36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  padding: 0px 7px;
+  background-image: linear-gradient(
+    to right,
+    #612c78ce,
+    #b65a2fd3,
+    #dacf3ad3,
+    #c00f0fa6
+  );
+  background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: snake 3s steps(7) infinite;
+}
+
+ul li {
+  letter-spacing: 0.5px;
+}
+span {
+  border: 2px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 5px 10px;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  background-color: #fff;
+  position: relative;
+  border: 2px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 30px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
+}
+.card img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card h2,
+.card p {
+  font-family: monospace, sans-serif;
+  margin: 0;
+  color: hsl(0, 0%, 20%);
+}
+
+.arrow-right {
+  position: absolute;
+  right: 10%;
+  cursor: pointer;
+  font-size: larger;
+  opacity: 0.7;
+  animation: moving 1s linear 0.5s infinite;
+}
+.arrow-right:hover,
+.arrow-left:hover {
+  animation-play-state: paused;
+}
+.arrow-left {
+  position: absolute;
+  cursor: pointer;
+  font-size: larger;
+  opacity: 0.7;
+  animation: moving 1s linear 0.5s infinite;
+}
+
+.projects-ul {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.info {
+  background-color: #fff;
+  font-family: monospace;
+  font-size: large;
+  position: relative;
+  border: 2px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 30px;
+  width: fit-content;
+  margin: 10px;
+}
+.info > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.profile img {
+  border-radius: 50%;
+  max-width: 60%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.profile img:hover,
+.card img:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.overlay-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.overlay-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+@keyframes snake {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 200%;
+  }
+}
